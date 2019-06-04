@@ -5,11 +5,14 @@ if [ -x "$(command which kubectl)" ]; then
   alias kcdd='kubectl describe deployment'
   alias kcdn='kubectl describe node'
   alias kcdp='kubectl describe pod'
+  alias kcds='kubectl describe service'
   alias kcgd='kubectl get deployments'
   alias kcgdan='kubectl get deployments --all-namespaces'
   alias kcgn='kubectl get nodes'
   alias kcgp='kubectl get pods'
+  alias kcgs='kubectl get services'
   alias kcgpan='kubectl get pods --all-namespaces'
+  alias kcc='kubectl config'
   # open dashboard of active cluster
   alias kcfod='kubectl -n kube-system port-forward $(kubectl get pods -n kube-system -l k8s-app=kubernetes-dashboard | awk {'print $1'} | tail -1) 9943:8443 >/dev/null &; $BROWSER https://localhost:9943'
   # print token of active cluster
